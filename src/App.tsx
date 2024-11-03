@@ -1,13 +1,14 @@
-import { useState } from 'react'
 import './App.css'
-import SudokuGrid from './components/SudokuGrid'
+import SudokuSolver from './components/SudokuSolver'
 
 function App() {
 
   return (
-    <>
-      <SudokuGrid />
-    </>
+    <main className="min-h-screen bg-gray-50 py-8">
+      <div className="container mx-auto">
+        <SudokuSolver />
+      </div>
+    </main>
   )
 }
 
