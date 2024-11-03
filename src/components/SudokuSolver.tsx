@@ -148,6 +148,7 @@ const SudokuSolver = () => {
         )}
 
         {solveState === 'paused' && (
+          <>
           <Button
             onClick={handleResume}
             className="bg-green-500 hover:bg-green-600"
@@ -155,10 +156,27 @@ const SudokuSolver = () => {
             <PlayIcon className="w-4 h-4 mr-2"/>
             Resume
           </Button>
+          <Button
+            onClick={handleReset}
+            className="bg-green-500 hover:bg-green-600"
+          >
+            <RotateCcwIcon className="w-4 h-4 mr-2"/>
+            Reset
+          </Button>
+        </>
         )}
 
         {solveState === 'solved' && (
-          <p className="text-green-600 font-medium">Sudoku solved!</p>
+          <div>
+            <p className="text-green-600 font-medium">Sudoku solved!</p>
+            <Button
+              onClick={handleReset}
+              className="bg-green-500 hover:bg-green-600"
+            >
+              <RotateCcwIcon className="w-4 h-4 mr-2"/>
+              Reset
+            </Button>
+          </div>
         )}
       </div>
     </div>
