@@ -17,8 +17,6 @@ const SudokuSolver = () => {
   const solve = useCallback(async (testGrid: Grid): Promise<boolean> => {
     const empty = findEmptyCell(testGrid);
 
-    console.log(`empty: ${empty?.row}, ${empty?.col}`);
-
     if(!empty) {
       setSolveState('solved');
       solvingRef.current = false;
@@ -27,8 +25,6 @@ const SudokuSolver = () => {
 
     const {row, col} = empty;
     setCurrentCell({row, col});
-
-    console.log('Finding number to set to the empty cell');
 
     for (let num = 1; num <= 9; num++) {
 
@@ -58,7 +54,7 @@ const SudokuSolver = () => {
 
     return false;
 
-  }, [solveState, speed]);
+  }, [speed]);
 
   const handleSolve = async () => {
     setSolveState('solving');
